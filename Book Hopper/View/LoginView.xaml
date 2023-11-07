@@ -1,0 +1,60 @@
+﻿<Window x:Class="Book_Hopper.View.LoginView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Book_Hopper.View"
+        mc:Ignorable="d"
+        Title="LoginView" Height="920" Width="1280"
+        WindowStartupLocation="CenterScreen">
+
+    <Grid>
+        <Grid.Background>
+            <SolidColorBrush Color="#4AC7EF"/>
+        </Grid.Background>
+
+        <!-- Header -->
+        <Grid Background="#B6C197" VerticalAlignment="Top" Height="60">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10">
+                <Image Source="/Images/Logo.png" Width="75" Height="50" Margin="0,0,5,0"/>
+                <TextBlock Text="BOOKHOPPER" Foreground="#931F1D" VerticalAlignment="Center" FontSize="36" FontFamily="PT Sans Narrow" FontWeight="SemiBold"/>
+            </StackPanel>
+        </Grid>
+
+        <!-- Content Centered on Screen -->
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Grid.Background>
+                <SolidColorBrush Color="#B6C197"/>
+            </Grid.Background>
+
+            <Border BorderBrush="White" BorderThickness="2" CornerRadius="10" Padding="40">
+                <StackPanel>
+                    <!-- Username -->
+                    <StackPanel Margin="0,0,0,15">
+                        <Label Content="Username" Foreground="Black" FontFamily="Arial" />
+                        <Border Background="White" CornerRadius="5" Padding="10" Margin="0,0,0,10">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="/Images/user.png" Width="30" Height="30" Margin="10,0,10,0"/>
+                                <TextBox x:Name="UsernameTextBox" Width="300" Background="Transparent" BorderThickness="0" FontSize="18" />
+                            </StackPanel>
+                        </Border>
+                    </StackPanel>
+
+                    <!-- Password -->
+                    <StackPanel Margin="0,0,0,15">
+                        <Label Content="Password" Foreground="Black" FontFamily="Arial" />
+                        <Border Background="White" CornerRadius="5" Padding="10" Margin="0,0,0,10">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="/Images/key.png" Width="30" Height="30" Margin="10,0,10,0"/>
+                                <PasswordBox x:Name="PasswordBox" Width="300" Background="Transparent" BorderThickness="0" FontSize="18" />
+                            </StackPanel>
+                        </Border>
+                    </StackPanel>
+
+                    <!-- Login Button -->
+                    <Button Content="Login" Width="150" Height="40"  Background="#934D40" Foreground="#B6C197" FontFamily="Arial" />
+                </StackPanel>
+            </Border>
+        </Grid>
+    </Grid>
+</Window>
