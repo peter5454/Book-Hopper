@@ -65,6 +65,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="View Model\ViewModelBase.cs" />
+    <Compile Include="View Model\ViewModelCommand%28RelayCommand%29.cs" />
     <Compile Include="View\LoginView.xaml.cs">
       <DependentUpon>LoginView.xaml</DependentUpon>
     </Compile>
@@ -118,7 +120,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Model\" />
-    <Folder Include="View Model\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\key.png" />
