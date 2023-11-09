@@ -1,0 +1,22 @@
+C:\Users\peter\source\repos\Book Hopper\Book Hopper\bin\Debug\Book Hopper.exe.config
+C:\Users\peter\source\repos\Book Hopper\Book Hopper\bin\Debug\Book Hopper.exe
+C:\Users\peter\source\repos\Book Hopper\Book Hopper\bin\Debug\Book Hopper.pdb
+C:\Users\peter\source\repos\Book Hopper\Book Hopper\bin\Debug\EntityFramework.dll
+C:\Users\peter\source\repos\Book Hopper\Book Hopper\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\peter\source\repos\Book Hopper\Book Hopper\bin\Debug\EntityFramework.xml
+C:\Users\peter\source\repos\Book Hopper\Book Hopper\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\peter\source\repos\Book Hopper\Book Hopper\obj\Debug\Book Hopper.csproj.AssemblyReference.cache
+C:\Users\peter\source\repos\Book Hopper\Book Hopper\obj\Debug\MainWindow.g.cs
+C:\Users\peter\source\repos\Book Hopper\Book Hopper\obj\Debug\View\LoginView.g.cs
+C:\Users\peter\source\repos\Book Hopper\Book Hopper\obj\Debug\App.g.cs
+C:\Users\peter\source\repos\Book Hopper\Book Hopper\obj\Debug\Book Hopper_MarkupCompile.cache
+C:\Users\peter\source\repos\Book Hopper\Book Hopper\obj\Debug\Book Hopper_MarkupCompile.lref
+C:\Users\peter\source\repos\Book Hopper\Book Hopper\obj\Debug\MainWindow.baml
+C:\Users\peter\source\repos\Book Hopper\Book Hopper\obj\Debug\View\LoginView.baml
+C:\Users\peter\source\repos\Book Hopper\Book Hopper\obj\Debug\Book Hopper.g.resources
+C:\Users\peter\source\repos\Book Hopper\Book Hopper\obj\Debug\Book_Hopper.Properties.Resources.resources
+C:\Users\peter\source\repos\Book Hopper\Book Hopper\obj\Debug\Book Hopper.csproj.GenerateResource.cache
+C:\Users\peter\source\repos\Book Hopper\Book Hopper\obj\Debug\Book Hopper.csproj.CoreCompileInputs.cache
+C:\Users\peter\source\repos\Book Hopper\Book Hopper\obj\Debug\Book Hopper.csproj.CopyComplete
+C:\Users\peter\source\repos\Book Hopper\Book Hopper\obj\Debug\Book Hopper.exe
+C:\Users\peter\source\repos\Book Hopper\Book Hopper\obj\Debug\Book Hopper.pdb
