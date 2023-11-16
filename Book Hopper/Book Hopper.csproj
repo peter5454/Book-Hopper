@@ -120,7 +120,6 @@
     <Compile Include="Helpers\SecureStringHelper.cs" />
     <Compile Include="Model\IUserRepository.cs" />
     <Compile Include="Model\UserModel.cs" />
-    <Compile Include="Repositories\DbConnector.cs" />
     <Compile Include="Services\AuthService.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\RegisterViewModel.cs" />
