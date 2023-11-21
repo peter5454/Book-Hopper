@@ -57,3 +57,62 @@ C:\Users\peter\source\repos\Book Hopper\Book Hopper\obj\Debug\View\RegisterView.
 C:\Users\peter\source\repos\Book Hopper\Book Hopper\obj\Debug\View\RegisterView.baml
 C:\Users\peter\source\repos\Book Hopper\Book Hopper\obj\Debug\CustomControls\UserControl1.g.cs
 C:\Users\peter\source\repos\Book Hopper\Book Hopper\obj\Debug\CustomControls\UserControl1.baml
+J:\VS Files\Book Hopper\bin\Debug\Book Hopper.exe.config
+J:\VS Files\Book Hopper\bin\Debug\Book Hopper.exe
+J:\VS Files\Book Hopper\bin\Debug\Book Hopper.pdb
+J:\VS Files\Book Hopper\bin\Debug\BCrypt.Net-Next.dll
+J:\VS Files\Book Hopper\bin\Debug\EntityFramework.dll
+J:\VS Files\Book Hopper\bin\Debug\EntityFramework.SqlServer.dll
+J:\VS Files\Book Hopper\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+J:\VS Files\Book Hopper\bin\Debug\Microsoft.Bcl.HashCode.dll
+J:\VS Files\Book Hopper\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+J:\VS Files\Book Hopper\bin\Debug\Npgsql.dll
+J:\VS Files\Book Hopper\bin\Debug\System.Buffers.dll
+J:\VS Files\Book Hopper\bin\Debug\System.Collections.Immutable.dll
+J:\VS Files\Book Hopper\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+J:\VS Files\Book Hopper\bin\Debug\System.Memory.dll
+J:\VS Files\Book Hopper\bin\Debug\System.Numerics.Vectors.dll
+J:\VS Files\Book Hopper\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+J:\VS Files\Book Hopper\bin\Debug\System.Text.Encodings.Web.dll
+J:\VS Files\Book Hopper\bin\Debug\System.Text.Json.dll
+J:\VS Files\Book Hopper\bin\Debug\System.Threading.Channels.dll
+J:\VS Files\Book Hopper\bin\Debug\System.Threading.Tasks.Extensions.dll
+J:\VS Files\Book Hopper\bin\Debug\System.ValueTuple.dll
+J:\VS Files\Book Hopper\bin\Debug\BCrypt.Net-Next.xml
+J:\VS Files\Book Hopper\bin\Debug\EntityFramework.xml
+J:\VS Files\Book Hopper\bin\Debug\EntityFramework.SqlServer.xml
+J:\VS Files\Book Hopper\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+J:\VS Files\Book Hopper\bin\Debug\Microsoft.Bcl.HashCode.xml
+J:\VS Files\Book Hopper\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+J:\VS Files\Book Hopper\bin\Debug\Npgsql.xml
+J:\VS Files\Book Hopper\bin\Debug\System.Buffers.xml
+J:\VS Files\Book Hopper\bin\Debug\System.Collections.Immutable.xml
+J:\VS Files\Book Hopper\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+J:\VS Files\Book Hopper\bin\Debug\System.Memory.xml
+J:\VS Files\Book Hopper\bin\Debug\System.Numerics.Vectors.xml
+J:\VS Files\Book Hopper\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+J:\VS Files\Book Hopper\bin\Debug\System.Text.Encodings.Web.xml
+J:\VS Files\Book Hopper\bin\Debug\System.Text.Json.xml
+J:\VS Files\Book Hopper\bin\Debug\System.Threading.Channels.xml
+J:\VS Files\Book Hopper\bin\Debug\System.Threading.Tasks.Extensions.xml
+J:\VS Files\Book Hopper\bin\Debug\System.ValueTuple.xml
+J:\VS Files\Book Hopper\obj\Debug\Book Hopper.csproj.AssemblyReference.cache
+J:\VS Files\Book Hopper\obj\Debug\CustomControls\UserControl1.g.cs
+J:\VS Files\Book Hopper\obj\Debug\MainWindow.g.cs
+J:\VS Files\Book Hopper\obj\Debug\View\LoginView.g.cs
+J:\VS Files\Book Hopper\obj\Debug\View\RegisterView.g.cs
+J:\VS Files\Book Hopper\obj\Debug\App.g.cs
+J:\VS Files\Book Hopper\obj\Debug\GeneratedInternalTypeHelper.g.cs
+J:\VS Files\Book Hopper\obj\Debug\Book Hopper_MarkupCompile.cache
+J:\VS Files\Book Hopper\obj\Debug\Book Hopper_MarkupCompile.lref
+J:\VS Files\Book Hopper\obj\Debug\CustomControls\UserControl1.baml
+J:\VS Files\Book Hopper\obj\Debug\MainWindow.baml
+J:\VS Files\Book Hopper\obj\Debug\View\LoginView.baml
+J:\VS Files\Book Hopper\obj\Debug\View\RegisterView.baml
+J:\VS Files\Book Hopper\obj\Debug\Book Hopper.g.resources
+J:\VS Files\Book Hopper\obj\Debug\Book_Hopper.Properties.Resources.resources
+J:\VS Files\Book Hopper\obj\Debug\Book Hopper.csproj.GenerateResource.cache
+J:\VS Files\Book Hopper\obj\Debug\Book Hopper.csproj.CoreCompileInputs.cache
+J:\VS Files\Book Hopper\obj\Debug\Book Hopper.csproj.CopyComplete
+J:\VS Files\Book Hopper\obj\Debug\Book Hopper.exe
+J:\VS Files\Book Hopper\obj\Debug\Book Hopper.pdb

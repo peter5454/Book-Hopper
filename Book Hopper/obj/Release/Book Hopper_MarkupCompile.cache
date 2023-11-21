@@ -4,11 +4,11 @@
 winexe
 C#
 .cs
-J:\VS Files\Book Hopper\obj\Debug\
+J:\VS Files\Book Hopper\obj\Release\
 Book_Hopper
 none
 false
-DEBUG;TRACE
+TRACE
 J:\VS Files\Book Hopper\App.xaml
 41438930643
 
@@ -16,5 +16,5 @@ J:\VS Files\Book Hopper\App.xaml
 34-2103475742
 CustomControls\UserControl1.xaml;MainWindow.xaml;View\LoginView.xaml;View\RegisterView.xaml;
 
-False
+True
 
