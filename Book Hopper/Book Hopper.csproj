@@ -125,8 +125,8 @@
     <Compile Include="ViewModels\RegisterViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
     <Compile Include="ViewModels\ViewModelCommand%28RelayCommand%29.cs" />
-    <Compile Include="View\Admin-Books.xaml.cs">
-      <DependentUpon>Admin-Books.xaml</DependentUpon>
+    <Compile Include="View\AdminDashboard.xaml.cs">
+      <DependentUpon>AdminDashboard.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\LoginView.xaml.cs">
       <DependentUpon>LoginView.xaml</DependentUpon>
@@ -150,7 +150,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="View\Admin-Books.xaml">
+    <Page Include="View\AdminDashboard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

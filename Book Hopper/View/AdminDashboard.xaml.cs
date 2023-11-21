@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace Book_Hopper.View
 {
     /// <summary>
-    /// Interaction logic for Admin_Books.xaml
+    /// Interaction logic for AdminDashboard.xaml
     /// </summary>
-    public partial class Admin_Books : Window
+    public partial class AdminDashboard : Window
     {
-        public Admin_Books()
+        public AdminDashboard()
         {
             InitializeComponent();
         }
