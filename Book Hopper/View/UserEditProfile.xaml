@@ -91,18 +91,18 @@
 
                         <StackPanel Orientation="Vertical" Grid.Column="0">
                             <TextBlock Text="First Name" Foreground="#000000" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,30,0,0" />
-                            <TextBox Height="62" TextChanged="TextBox_TextChanged" VerticalContentAlignment="Center" FontSize="12" Padding="20,0" Margin="20,0"/>
+                            <TextBox Height="62" VerticalContentAlignment="Center" FontSize="12" Padding="20,0" Margin="20,0"/>
                         </StackPanel>
 
                         <StackPanel Orientation="Vertical" Grid.Column="1">
                             <TextBlock Text="Last Name" Foreground="#000000" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,30,0,0" />
-                            <TextBox Height="62" TextChanged="TextBox_TextChanged" VerticalContentAlignment="Center" FontSize="12" Padding="20,0" Margin="20,0"/>
+                            <TextBox Height="62" VerticalContentAlignment="Center" FontSize="12" Padding="20,0" Margin="20,0"/>
                         </StackPanel>
                     </Grid>
                     <TextBlock Text="Username" Foreground="#000000" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,30,0,0" />
-                    <TextBox Height="62" TextChanged="TextBox_TextChanged" VerticalContentAlignment="Center" FontSize="12" Padding="20,0" Margin="20,0"/>
+                    <TextBox Height="62" VerticalContentAlignment="Center" FontSize="12" Padding="20,0" Margin="20,0"/>
                     <TextBlock Text="Email" Foreground="#000000" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,30,0,0" />
-                    <TextBox Height="62" TextChanged="TextBox_TextChanged" VerticalContentAlignment="Center" FontSize="12" Padding="20,0" Margin="20,0"/>
+                    <TextBox Height="62" VerticalContentAlignment="Center" FontSize="12" Padding="20,0" Margin="20,0"/>
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition/>
@@ -111,12 +111,12 @@
 
                         <StackPanel Orientation="Vertical" Grid.Column="0">
                             <TextBlock Text="Password" Foreground="#000000" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,30,0,0" />
-                            <TextBox Height="62" TextChanged="TextBox_TextChanged" VerticalContentAlignment="Center" FontSize="12" Padding="20,0" Margin="20,0"/>
+                            <TextBox Height="62" VerticalContentAlignment="Center" FontSize="12" Padding="20,0" Margin="20,0"/>
                         </StackPanel>
 
                         <StackPanel Orientation="Vertical" Grid.Column="1">
                             <TextBlock Text="Confirm Password" Foreground="#000000" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,30,0,0" />
-                            <TextBox Height="62" TextChanged="TextBox_TextChanged" VerticalContentAlignment="Center" FontSize="12" Padding="20,0" Margin="20,0"/>
+                            <TextBox Height="62" VerticalContentAlignment="Center" FontSize="12" Padding="20,0" Margin="20,0"/>
                         </StackPanel>
                     </Grid>
                     <Grid HorizontalAlignment="Right">

@@ -88,7 +88,7 @@
                            FontWeight="Bold"
                            HorizontalAlignment="Center"
                            />
-                        <TextBox Width="280" Height="62" TextChanged="TextBox_TextChanged" VerticalContentAlignment="Center" FontSize="12" Padding="20,0,0,0"/>
+                        <TextBox Width="280" Height="62" VerticalContentAlignment="Center" FontSize="12" Padding="20,0,0,0"/>
                     </StackPanel>
                     <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Grid.Column="1">
                         <TextBlock Text="Last Name"
@@ -97,7 +97,7 @@
                            FontWeight="Bold"
                            HorizontalAlignment="Center"
                            />
-                        <TextBox Width="280" Height="62" TextChanged="TextBox_TextChanged" VerticalContentAlignment="Center" FontSize="12" Padding="20,0,0,0"/>
+                        <TextBox Width="280" Height="62" VerticalContentAlignment="Center" FontSize="12" Padding="20,0,0,0"/>
                     </StackPanel>
                 </Grid>
                 <TextBlock Text="Username" Foreground="#000000" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,30,0,0" />
@@ -118,7 +118,7 @@
                            FontWeight="Bold"
                            HorizontalAlignment="Center"
                            />
-                        <TextBox Width="280" Height="62" TextChanged="TextBox_TextChanged" VerticalContentAlignment="Center" FontSize="12" Padding="20,0,0,0"/>
+                        <TextBox Width="280" Height="62" VerticalContentAlignment="Center" FontSize="12" Padding="20,0,0,0"/>
                     </StackPanel>
                     <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Grid.Column="1">
                         <TextBlock Text="Confirm Password"
@@ -127,7 +127,7 @@
                            FontWeight="Bold"
                            HorizontalAlignment="Center"
                            />
-                        <TextBox Width="280" Height="62" TextChanged="TextBox_TextChanged" VerticalContentAlignment="Center" FontSize="12" Padding="20,0,0,0"/>
+                        <TextBox Width="280" Height="62" VerticalContentAlignment="Center" FontSize="12" Padding="20,0,0,0"/>
                     </StackPanel>
                 </Grid>
 
