@@ -34,7 +34,7 @@
                         <ColumnDefinition Width="27"/>
                     </Grid.ColumnDefinitions>
 
-                    <Image Source="/Images/LOGO.png"
+                    <Image Source="/Images/LOGOwithname.png"
                        Width="360" Height="70"
                        Grid.Column="0"
                        HorizontalAlignment="Left"
@@ -80,7 +80,7 @@
                         <Setter Property="CornerRadius" Value="100"/>
                     </Style>
                 </StackPanel.Resources>
-                <Image Source="/Images/LOGO.png" Margin="0,20" Width="360"/>
+                <Image Source="/Images/LOGOwithname.png" Margin="0,20" Width="360"/>
                 <TextBlock Text="Username"
                            Foreground="#000000"
                            FontSize="24"

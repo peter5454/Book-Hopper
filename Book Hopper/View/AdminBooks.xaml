@@ -32,7 +32,7 @@
                         <ColumnDefinition Width="27"/>
                     </Grid.ColumnDefinitions>
 
-                    <Image Source="/Images/LOGO.png"
+                    <Image Source="/Images/LOGOwithname.png"
                        Width="360" Height="70"
                        Grid.Column="0"
                        HorizontalAlignment="Left"

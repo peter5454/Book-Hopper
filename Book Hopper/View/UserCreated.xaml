@@ -33,7 +33,7 @@
                         <ColumnDefinition Width="27"/>
                     </Grid.ColumnDefinitions>
 
-                    <Image Source="/Images/LOGO.png"
+                    <Image Source="/Images/LOGOwithname.png"
                        Width="360" Height="70"
                        Grid.Column="0"
                        HorizontalAlignment="Left"
@@ -75,7 +75,7 @@
             </Grid>
 
             <StackPanel Width="639" Orientation="Vertical" Margin="0,136,0,446" Height="300"  Background="#B6C197" VerticalAlignment="Center">
-                <Image Source="/Images/LOGO.png" Margin="0,20" Width="360"/>
+                <Image Source="/Images/LOGOwithname.png" Margin="0,20" Width="360"/>
                 <TextBlock Text="Your account has been created." Foreground="#000000" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center"/>
                 <TextBlock Text="You can now login." Margin="0,10"  Foreground="#000000" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center"/>
                 <Button x:Name="Login" Width="222" Height="62" Margin="0,10,0,0" Background="#934D40">
