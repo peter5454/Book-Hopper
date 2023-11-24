@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BookHopperApp.View"
-        xmlns:viewModel="clr-namespace:BookHopperApp.ViewModel"
+        xmlns:viewModel="clr-namespace:Book_Hopper.ViewModels"
         mc:Ignorable="d"
         Title="UserLogin" Height="1080" Width="1920"
         WindowState="Maximized"
@@ -33,12 +33,13 @@
                         <ColumnDefinition Width="90"/>
                         <ColumnDefinition Width="27"/>
                     </Grid.ColumnDefinitions>
-
-                    <Image Source="/Images/LOGOwithname.png"
+                    <Button Grid.Column="0" Background="Transparent" BorderThickness="0">
+                        <Image Source="/Images/LOGOwithname.png"
                        Width="360" Height="70"
                        Grid.Column="0"
                        HorizontalAlignment="Left"
                        Margin="27,0,0,0"/>
+                    </Button>
                     <TextBox Grid.Column="1" Width="1053" Height="53" VerticalAlignment="Center" FontSize="24">
                         <TextBox.Resources>
                             <Style TargetType="{x:Type Border}">

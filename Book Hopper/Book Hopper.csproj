@@ -264,6 +264,9 @@
   <ItemGroup>
     <Resource Include="Images\LOGOwithname.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Search Icon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
