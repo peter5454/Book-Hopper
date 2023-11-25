@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-J:\VS Files\Peter5454-BookHopper\Book Hopper\obj\Debug\
+C:\Users\peter\source\repos\Book Hopper\Book Hopper\obj\Debug\
 Book_Hopper
 none
 false
 DEBUG;TRACE
-J:\VS Files\Peter5454-BookHopper\Book Hopper\App.xaml
+C:\Users\peter\source\repos\Book Hopper\Book Hopper\App.xaml
 13-526605669
 
 26-1099472284
-341361444833
+34-1988959004
 CustomControls\UserControl1.xaml;MainWindow.xaml;View\AdminAccounts.xaml;View\AdminBooks.xaml;View\AdminDashboard.xaml;View\LoginView.xaml;View\RegisterView.xaml;View\UserBooks.xaml;View\UserCreated.xaml;View\UserEditProfile.xaml;View\UserLogin.xaml;View\UserProfile.xaml;View\UserRegister.xaml;
 
 True
