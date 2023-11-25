@@ -125,11 +125,38 @@
     <Compile Include="ViewModels\RegisterViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
     <Compile Include="ViewModels\ViewModelCommand%28RelayCommand%29.cs" />
+    <Compile Include="View\AdminAccounts.xaml.cs">
+      <DependentUpon>AdminAccounts.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\AdminBooks.xaml.cs">
+      <DependentUpon>AdminBooks.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\AdminDashboard.xaml.cs">
+      <DependentUpon>AdminDashboard.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\LoginView.xaml.cs">
       <DependentUpon>LoginView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\RegisterView.xaml.cs">
       <DependentUpon>RegisterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserBooks.xaml.cs">
+      <DependentUpon>UserBooks.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserCreated.xaml.cs">
+      <DependentUpon>UserCreated.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserEditProfile.xaml.cs">
+      <DependentUpon>UserEditProfile.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserLogin.xaml.cs">
+      <DependentUpon>UserLogin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserProfile.xaml.cs">
+      <DependentUpon>UserProfile.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserRegister.xaml.cs">
+      <DependentUpon>UserRegister.xaml</DependentUpon>
     </Compile>
     <Page Include="CustomControls\UserControl1.xaml">
       <SubType>Designer</SubType>
@@ -147,6 +174,18 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\AdminAccounts.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\AdminBooks.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\AdminDashboard.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="View\LoginView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -154,6 +193,30 @@
     <Page Include="View\RegisterView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UserBooks.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\UserCreated.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\UserEditProfile.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\UserLogin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\UserProfile.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\UserRegister.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>
@@ -193,7 +256,17 @@
   <ItemGroup>
     <Resource Include="Images\key.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Images\Book.png" />
+    <Resource Include="Images\Lilies.png" />
+    <Resource Include="Images\Profile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\LOGOwithname.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Search Icon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
