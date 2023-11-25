@@ -12,6 +12,8 @@ using System.Windows.Navigation;
 using Book_Hopper.Services;
 using Book_Hopper.View;
 using Book_Hopper.CustomControls;
+using Book_Hopper.Model;
+using Book_Hopper.Helpers;
 
 namespace Book_Hopper.ViewModels
 {
@@ -19,7 +21,7 @@ namespace Book_Hopper.ViewModels
     {
         //Fields
         private string _username;
-        private SecureString _password;
+        private string _password;
         private string _errorMessage;
         private bool _isViewVisible = true;
 
@@ -36,7 +38,8 @@ namespace Book_Hopper.ViewModels
             }
         }
 
-        public SecureString Password
+        
+        public string Password
         {
             get
             {
@@ -48,6 +51,7 @@ namespace Book_Hopper.ViewModels
                 OnPropertyChanged(nameof(Password));
             }
         }
+
 
         public string ErrorMessage
         {
@@ -76,7 +80,6 @@ namespace Book_Hopper.ViewModels
         }
 
         public ICommand LoginCommand { get; }
-        public ICommand ShowPasswordCommand { get; }
         public LoginViewModel()
         {
             LoginCommand = new ViewModelCommand_RelayCommand_(ExecuteLoginCommand, CanExecuteLoginCommand);
@@ -107,16 +110,23 @@ namespace Book_Hopper.ViewModels
                 IsLoginInProgress = true;
                 ErrorMessage = string.Empty;
 
-                // Convert SecureString to plain string
-                string plainPassword = ConvertToUnsecureString(Password);
+                // Convert string password to SecureString
+                SecureString securePassword = SecureStringHelper.ConvertToSecureString(Password);
 
                 // Authenticate user
-                bool isAuthenticated = await Task.Run(() => AuthService.AuthenticateUser(Username, Password));
+                UserModel authenticatedUser = await Task.Run(() => AuthService.AuthenticateUser(Username, securePassword));
 
-                if (isAuthenticated)
+                if (authenticatedUser != null)
                 {
-                    // Successful login logic
-                    MessageBox.Show("Login successful!");
+                    // Redirect to AccountView with the authenticated user
+                    AccountView accountView = new AccountView(authenticatedUser);
+                    accountView.Show();
+
+                    // Close the current window
+                    if (obj is Window window)
+                    {
+                        window.Close();
+                    }
                 }
                 else
                 {
@@ -132,6 +142,7 @@ namespace Book_Hopper.ViewModels
                 IsLoginInProgress = false;
             }
         }
+
 
         private bool CanExecuteLoginCommand(object obj)
         {

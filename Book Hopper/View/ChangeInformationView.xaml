@@ -1,0 +1,89 @@
+﻿<Window x:Class="Book_Hopper.View.ChangeInformationView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Book_Hopper.View"
+        xmlns:ViewModel="clr-namespace:Book_Hopper.ViewModels" xmlns:customcontrols="clr-namespace:Book_Hopper.CustomControls" d:DataContext="{d:DesignInstance Type=ViewModel:ChangeInformationViewModel}"
+        mc:Ignorable="d"
+        Title="ChangeInformationView" Height="920" Width="1280"
+        WindowStartupLocation="CenterScreen">
+    <!-- Content Section -->
+    <Grid Background="#4AC7EF">
+        
+        <!-- Header -->
+        <Grid Background="#B6C197" VerticalAlignment="Top" Height="60">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10">
+                <Image Source="/Images/Logo.png" Width="75" Height="50" Margin="0,0,5,0"/>
+                <TextBlock Text="BOOKHOPPER" Foreground="#931F1D" VerticalAlignment="Center" FontSize="36" FontFamily="PT Sans Narrow" FontWeight="SemiBold"/>
+                <TextBlock Text="CHANGE INFORMATION" Foreground="#931F1D" VerticalAlignment="Center" FontSize="24" FontFamily="PT Sans Narrow" FontWeight="SemiBold" Margin="255,0,0,0"/>
+            </StackPanel>
+        </Grid>
+        
+        <!-- Content Centered on Screen -->
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+            
+            <Grid Background="#B6C197">
+                <Border BorderBrush="White" BorderThickness="2" CornerRadius="10" Padding="40">
+                    <StackPanel>
+                        <!-- User Information -->
+                        <StackPanel Margin="0,0,0,15">
+                            <TextBlock Text="User Information" Foreground="Black" FontFamily="Arial" FontSize="18"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,15">
+                            <TextBlock Text="ID:" Foreground="Black" FontFamily="Arial" Margin="0,0,10,0"/>
+                            <TextBlock Text="{Binding User.Id}" Foreground="Black" FontFamily="Arial"/>
+                        </StackPanel>
+
+                        <StackPanel Margin="0,0,0,15">
+                            <TextBlock Text="First Name:" Foreground="Black" FontFamily="Arial" Margin="0,0,0,0"/>
+                            <TextBox Text="{Binding User.Fname, UpdateSourceTrigger=PropertyChanged}" Foreground="Black" FontFamily="Arial" Width="300" Background="White" BorderThickness="0" FontSize="18"/>
+                        </StackPanel>
+                        <StackPanel Margin="0,0,0,15">
+                            <TextBlock Text="Last Name:" Foreground="Black" FontFamily="Arial" Margin="0,0,0,0"/>
+                            <TextBox Text="{Binding User.LName, UpdateSourceTrigger=PropertyChanged}" Foreground="Black" FontFamily="Arial" Width="300" Background="White" BorderThickness="0" FontSize="18"/>
+                        </StackPanel>
+                        <StackPanel Margin="0,0,0,15">
+                            <TextBlock Text="Username:" Foreground="Black" FontFamily="Arial"/>
+                            <TextBox Text="{Binding User.Username, UpdateSourceTrigger=PropertyChanged}" Foreground="Black" FontFamily="Arial" Width="300" Background="White" BorderThickness="0" FontSize="18"/>
+                        </StackPanel>
+                        <StackPanel Margin="0,0,0,15">
+                            <TextBlock Text="Email:" Foreground="Black" FontFamily="Arial"/>
+                            <TextBox Text="{Binding User.Email, UpdateSourceTrigger=PropertyChanged}" Foreground="Black" FontFamily="Arial" Width="300" Background="White" BorderThickness="0" FontSize="18"/>
+                        </StackPanel>
+                        <StackPanel Margin="0,0,0,15">
+                            <StackPanel Margin="0,0,0,10">
+                                <TextBlock Text="Current Password:" Foreground="Black" FontFamily="Arial"/>
+                                <customcontrols:BindablePasswordBox x:Name="Password" Background="White" 
+                                            Password="{Binding CurrentPassword, Mode=TwoWay}"/>
+                            </StackPanel>
+                            <StackPanel Margin="0,0,0,10">
+                                <TextBlock Text="New Password:" Foreground="Black" FontFamily="Arial"/>
+                                <customcontrols:BindablePasswordBox x:Name="NewPassword" Background="White" 
+                                            Password="{Binding NewPassword, Mode=TwoWay}"/>
+                            </StackPanel>
+                            <StackPanel Margin="0,0,0,10">
+                                <TextBlock Text="Confirm New Password:" Foreground="Black" FontFamily="Arial"/>
+                                <customcontrols:BindablePasswordBox x:Name="ConfirmNewPassword" Background="White" 
+                                            Password="{Binding ConfirmNewPassword, Mode=TwoWay}"/>
+                            </StackPanel>
+                            <TextBlock Text="{Binding ErrorMessage}" Foreground="Red" Margin="0,0,0,0" />
+                            <TextBlock Text="{Binding ErrorMessageTwo}" Foreground="Red" Margin="0,0,0,0" />
+                        </StackPanel>
+
+
+
+
+
+                        <!-- Buttons -->
+                        <StackPanel Orientation="Horizontal">
+                            <Button Content="Confirm Changes" Width="100" Height="30" Foreground="#934D40" FontFamily="Arial" Margin="0,0,40,0" Command="{Binding ConfirmChangesCommand}"/>
+
+                            <Button Content="Cancel" Command="{Binding CancelCommand}" Width="100" Height="30" Foreground="#934D40" FontFamily="Arial"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

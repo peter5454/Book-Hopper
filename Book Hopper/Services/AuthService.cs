@@ -3,6 +3,8 @@ using System.Security;
 using Npgsql;
 using System.Windows;
 using Book_Hopper.View;
+using Book_Hopper.Model;
+using NpgsqlTypes;
 
 namespace Book_Hopper.Services
 {
@@ -10,7 +12,7 @@ namespace Book_Hopper.Services
     {
         private static readonly string ConnectionString = "User ID=postgres;Password=postgres;Host=localhost;Port=5432;Database=postgres;Pooling=true;Minimum Pool Size=0;Maximum Pool Size=100; Connection Lifetime=0;";
 
-        public static bool AuthenticateUser(string username, SecureString password)
+        public static UserModel AuthenticateUser(string username, SecureString password)
         {
             using (var connection = new NpgsqlConnection(ConnectionString))
             {
@@ -33,17 +35,26 @@ namespace Book_Hopper.Services
                             // Verify the password
                             if (enteredPassword == storedPassword)
                             {
-                                return true; // Passwords match
+                                // Authentication successful, return user model
+                                return new UserModel
+                                {
+                                    Id = Convert.ToInt32(reader["Id"]),
+                                    Username = username,
+                                    Password = storedPassword,
+                                    Email = reader["Email"].ToString(),
+                                    Fname = reader["FName"].ToString(),
+                                    LName = reader["LName"].ToString()
+                                };
                             }
                         }
                     }
                 }
             }
 
-            return false; // No matching user or password incorrect
+            return null; // No matching user or password incorrect
         }
 
-        public static bool RegisterUser(string username, string email, string fName, string lName, SecureString password)
+        public static bool RegisterUser(string username, string email, string fName, string lName, string password)
         {
             // Check if input parameters are valid
             if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(email) ||
@@ -71,7 +82,7 @@ namespace Book_Hopper.Services
                 using (var cmd = new NpgsqlCommand("INSERT INTO users (Email, Password, UserName, FName, LName) VALUES (@Email, @Password, @Username, @FName, @LName)", connection))
                 {
                     cmd.Parameters.AddWithValue("Email", email);
-                    cmd.Parameters.AddWithValue("Password", ConvertToUnsecureString(password)); // Convert SecureString to plain string
+                    cmd.Parameters.AddWithValue("Password", password); // Convert SecureString to plain string
                     cmd.Parameters.AddWithValue("Username", username);
                     cmd.Parameters.AddWithValue("FName", fName);
                     cmd.Parameters.AddWithValue("LName", lName);
@@ -154,7 +165,7 @@ namespace Book_Hopper.Services
             }
         }
 
-        private static void RedirectLoginPage(Window currentWindow)
+        public static void RedirectLoginPage(Window currentWindow)
         {
             // Create an instance of LoginView
             LoginView loginView = new LoginView();
@@ -163,6 +174,106 @@ namespace Book_Hopper.Services
             loginView.Show();
             currentWindow?.Close();
         }
+        public static bool IsUsernameUnique(string username, string currentUsername)
+        {
+            using (var connection = new NpgsqlConnection(ConnectionString))
+            {
+                connection.Open();
+
+                using (var cmd = new NpgsqlCommand("SELECT COUNT(*) FROM users WHERE Username = @Username AND Username != @CurrentUsername", connection))
+                {
+                    cmd.Parameters.AddWithValue("Username", username);
+                    cmd.Parameters.AddWithValue("CurrentUsername", currentUsername);
+
+                    int userCount = Convert.ToInt32(cmd.ExecuteScalar());
+
+                    return userCount == 0;
+                }
+            }
+        }
+
+        public static bool IsEmailUnique(string email, string currentUsername)
+        {
+            using (var connection = new NpgsqlConnection(ConnectionString))
+            {
+                connection.Open();
+
+                using (var cmd = new NpgsqlCommand("SELECT COUNT(*) FROM users WHERE Email = @Email AND Username != @CurrentUsername", connection))
+                {
+                    cmd.Parameters.AddWithValue("Email", email);
+                    cmd.Parameters.AddWithValue("CurrentUsername", currentUsername);
+
+                    int emailCount = Convert.ToInt32(cmd.ExecuteScalar());
+
+                    return emailCount == 0;
+                }
+            }
+        }
+
+
+
+        public static bool UpdateUserInformation(UserModel user, string newPassword, int id)
+        {
+            using (var connection = new NpgsqlConnection(ConnectionString))
+            {
+                connection.Open();
+
+                string updateQuery = "UPDATE users SET Email = @Email, FName = @FName, LName = @LName, UserName = @UserName";
+
+                // Add password update only if a new password is provided
+                if (!string.IsNullOrEmpty(newPassword))
+                {
+                    updateQuery += ", Password = @Password";
+                }
+
+                updateQuery += " WHERE id = @Id";
+
+                using (var cmd = new NpgsqlCommand(updateQuery, connection))
+                {
+                    cmd.Parameters.AddWithValue("Email", user.Email);
+                    cmd.Parameters.AddWithValue("FName", user.Fname);
+                    cmd.Parameters.AddWithValue("LName", user.LName);
+                    cmd.Parameters.AddWithValue("UserName", user.Username);
+
+                    // Add password parameter only if a new password is provided
+                    if (!string.IsNullOrEmpty(newPassword))
+                    {
+                        cmd.Parameters.AddWithValue("Password", newPassword);
+                    }
+
+                    cmd.Parameters.AddWithValue("Id", id);
+
+                    // Execute the query
+                    int rowsAffected = cmd.ExecuteNonQuery();
+
+                    // Return true if at least one row was affected
+                    return rowsAffected > 0;
+                }
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+        public static void RedirectToAccountPage(Window currentWindow, UserModel user)
+        {
+            // Create an instance of account page
+            AccountView AccountView = new AccountView(user);
+
+            // Show LoginView
+            AccountView.Show();
+            currentWindow?.Close();
+        }
+
 
 
 

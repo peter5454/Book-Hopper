@@ -1,0 +1,72 @@
+﻿<Window x:Class="Book_Hopper.View.AccountView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Book_Hopper.View"
+        xmlns:ViewModel="clr-namespace:Book_Hopper.ViewModels"
+        mc:Ignorable="d"
+        Title="AccountView" Height="920" Width="1280"
+        WindowStartupLocation="CenterScreen">
+    
+
+    <Window.DataContext>
+        <ViewModel:AccountViewModel/>
+    </Window.DataContext>
+
+    <Grid>
+        <Grid.Background>
+            <SolidColorBrush Color="#4AC7EF"/>
+        </Grid.Background>
+
+        <!-- Header -->
+        <Grid Background="#B6C197" VerticalAlignment="Top" Height="60">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10">
+                <Image Source="/Images/Logo.png" Width="75" Height="50" Margin="0,0,5,0"/>
+                <TextBlock Text="BOOKHOPPER" Foreground="#931F1D" VerticalAlignment="Center" FontSize="36" FontFamily="PT Sans Narrow" FontWeight="SemiBold"/>
+                <TextBlock Text="ACCOUNT" Foreground="#931F1D" VerticalAlignment="Center" FontSize="36" FontFamily="PT Sans Narrow" FontWeight="SemiBold" Margin="255,0,0,0"/>
+            </StackPanel>
+        </Grid>
+
+        <!-- Content Centered on Screen -->
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Grid Background="#B6C197">
+                <Border BorderBrush="White" BorderThickness="2" CornerRadius="10" Padding="40">
+                    <StackPanel>
+                        <!-- User Information -->
+                        <StackPanel Margin="0,0,0,15">
+                            <TextBlock Text="User Information" Foreground="Black" FontFamily="Arial" FontSize="18"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,15">
+                            <TextBlock Text="ID:" Foreground="Black" FontFamily="Arial" Margin="0,0,10,0"/>
+                            <TextBlock Text="{Binding User.Id}" Foreground="White" FontFamily="Arial"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,15">
+                            <TextBlock Text="Name:" Foreground="Black" FontFamily="Arial" Margin="0,0,10,0"/>
+                            <TextBlock Text="{Binding User.Fname}" Foreground="White" FontFamily="Arial"/>
+                            <TextBlock Text="{Binding User.LName}" Foreground="White" FontFamily="Arial" Margin="5,0,0,0"/>
+                        </StackPanel>
+                        <StackPanel Margin="0,0,0,15">
+                            <TextBlock Text="Username:" Foreground="Black" FontFamily="Arial"/>
+                            <TextBlock Text="{Binding User.Username}" Foreground="White" FontFamily="Arial"/>
+                        </StackPanel>
+                        <StackPanel Margin="0,0,0,15">
+                            <TextBlock Text="Email:" Foreground="Black" FontFamily="Arial"/>
+                            <TextBlock Text="{Binding User.Email}" Foreground="White" FontFamily="Arial"/>
+                        </StackPanel>
+                        <StackPanel Margin="0,0,0,15">
+                            <TextBlock Text="Password:" Foreground="Black" FontFamily="Arial"/>
+                            <TextBlock Text="********" Foreground="White" FontFamily="Arial"/>
+                        </StackPanel>
+
+                        <!-- Buttons -->
+                        <StackPanel Orientation="Horizontal">
+                            <Button Content="Logout" Command="{Binding LogoutCommand}" Width="100" Height="30" Foreground="#934D40" FontFamily="Arial" Margin="0,0,10,0"/>
+                            <Button Content="Change Information" Command="{Binding ChangeInfoCommand}" Width="150" Height="30" Foreground="#934D40" FontFamily="Arial"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

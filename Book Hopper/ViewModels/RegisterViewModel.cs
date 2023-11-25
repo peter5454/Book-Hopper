@@ -18,8 +18,8 @@ namespace Book_Hopper.ViewModels
         private string _confirmEmail;
         private string _firstName;
         private string _lastName;
-        private SecureString _password;
-        private SecureString _confirmPassword;
+        private String _password;
+        private String _confirmPassword;
         private string _errorMessage;
 
         public string Username
@@ -72,7 +72,7 @@ namespace Book_Hopper.ViewModels
             }
         }
 
-        public SecureString Password
+        public String Password
         {
             get { return _password; }
             set
@@ -82,7 +82,7 @@ namespace Book_Hopper.ViewModels
             }
         }
 
-        public SecureString ConfirmPassword
+        public String ConfirmPassword
         {
             get { return _confirmPassword; }
             set
@@ -134,7 +134,7 @@ namespace Book_Hopper.ViewModels
                     return;
                 }
 
-                if (!SecureStringHelper.AreSecureStringsEqual(Password, ConfirmPassword))
+                if (Password != ConfirmPassword)
                 {
                     ErrorMessage = "Password and Confirm Password must match.";
                     return;

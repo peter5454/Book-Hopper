@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\peter\source\repos\Book Hopper\Book Hopper\App.xaml
-41438930643
+6-968281525
 
-171760707798
+211654422597
 34-1988959004
-CustomControls\UserControl1.xaml;MainWindow.xaml;View\LoginView.xaml;View\RegisterView.xaml;
+CustomControls\UserControl1.xaml;MainWindow.xaml;View\AccountView.xaml;View\ChangeInformationView.xaml;View\LoginView.xaml;View\RegisterView.xaml;
 
-False
+True
 

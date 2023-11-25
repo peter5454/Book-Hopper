@@ -36,7 +36,7 @@
                 <TextBlock Text="LOGIN" Foreground="#931F1D" VerticalAlignment="Center" FontSize="36" FontFamily="PT Sans Narrow" FontWeight="SemiBold" Margin="255,0,0,0"/>
             </StackPanel>
         </Grid>
-        <TextBlock Text="{Binding ErrorMessage}" Foreground="#931F1D" VerticalAlignment="Center" FontSize="30" FontFamily="PT Sans Narrow"  Margin="413,204,413,626" TextWrapping="Wrap" Height="90"/>
+        <TextBlock Text="{Binding ErrorMessage}" Foreground="#931F1D" VerticalAlignment="Center" FontSize="15" FontFamily="PT Sans Narrow"  Margin="413,197,413,633" TextWrapping="Wrap" Height="90"/>
         <!-- Content Centered on Screen -->
         <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
             <Grid.Background>
@@ -68,7 +68,7 @@
                     </StackPanel>
 
                     <!-- Login Button -->
-                    <Button Content="Login" Width="150" Height="40"  Foreground="#934D40" FontFamily="Arial" Command="{Binding LoginCommand}"/>
+                    <Button Content="Login" Width="150" Height="40" Foreground="#934D40" FontFamily="Arial" Command="{Binding LoginCommand}" CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}"/>
 
                     <!-- Register Button (as TextBlock for hyperlink appearance) -->
                     <TextBlock Text="Don't have an account yet? Sign up" Foreground="#934D40" FontFamily="Arial" TextDecorations="Underline" Cursor="Hand" HorizontalAlignment="Center">

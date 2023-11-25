@@ -57,3 +57,7 @@ C:\Users\peter\source\repos\Book Hopper\Book Hopper\obj\Debug\View\RegisterView.
 C:\Users\peter\source\repos\Book Hopper\Book Hopper\obj\Debug\View\RegisterView.baml
 C:\Users\peter\source\repos\Book Hopper\Book Hopper\obj\Debug\CustomControls\UserControl1.g.cs
 C:\Users\peter\source\repos\Book Hopper\Book Hopper\obj\Debug\CustomControls\UserControl1.baml
+C:\Users\peter\source\repos\Book Hopper\Book Hopper\obj\Debug\View\ChangeInformationView.g.cs
+C:\Users\peter\source\repos\Book Hopper\Book Hopper\obj\Debug\View\ChangeInformationView.baml
+C:\Users\peter\source\repos\Book Hopper\Book Hopper\obj\Debug\View\AccountView.g.cs
+C:\Users\peter\source\repos\Book Hopper\Book Hopper\obj\Debug\View\AccountView.baml
