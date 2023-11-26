@@ -125,6 +125,11 @@
     <Compile Include="ViewModels\ChangeInformationViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\RegisterViewModel.cs" />
+    <Compile Include="ViewModels\UserCreatedViewModel.cs" />
+    <Compile Include="ViewModels\UserEditProfileViewModel.cs" />
+    <Compile Include="ViewModels\UserLoginViewModel.cs" />
+    <Compile Include="ViewModels\UserProfileViewModel.cs" />
+    <Compile Include="ViewModels\UserRegisterViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
     <Compile Include="ViewModels\ViewModelCommand%28RelayCommand%29.cs" />
     <Compile Include="View\AccountView.xaml.cs">
