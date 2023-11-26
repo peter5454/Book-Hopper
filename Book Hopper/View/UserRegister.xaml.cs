@@ -23,5 +23,6 @@ namespace BookHopperApp.View
         {
             InitializeComponent();
         }
+
     }
 }

@@ -23,21 +23,5 @@ namespace BookHopperApp.View
         {
             InitializeComponent();
         }
-
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void Login_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void AdminLoginClick(object sender, RoutedEventArgs e)
-        {
-            AdminDashboard ad = new AdminDashboard();
-            ad.Show();
-        }
     }
 }

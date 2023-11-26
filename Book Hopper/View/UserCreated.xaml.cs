@@ -23,5 +23,10 @@ namespace BookHopperApp.View
         {
             InitializeComponent();
         }
+
+        private void Books_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

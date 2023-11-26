@@ -1,25 +1,24 @@
-﻿using System;
-using System.Security;
+﻿using Book_Hopper.Services;
+using BookHopperApp.View;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
-using Book_Hopper.Services;
-using Book_Hopper.Helpers;
-using System.Threading.Tasks;
-using System.Windows.Navigation;
-using Book_Hopper.View;
 
 namespace Book_Hopper.ViewModels
 {
-    public class RegisterViewModel : ViewModelBase
+    class UserRegisterViewModel : ViewModelBase
     {
         // Fields
         private string _username;
         private string _email;
-        private string _confirmEmail;
         private string _firstName;
         private string _lastName;
-        private SecureString _password;
-        private SecureString _confirmPassword;
+        private String _password;
+        private String _confirmPassword;
         private string _errorMessage;
 
         public string Username
@@ -39,16 +38,6 @@ namespace Book_Hopper.ViewModels
             {
                 _email = value;
                 OnPropertyChanged(nameof(Email));
-            }
-        }
-
-        public string ConfirmEmail
-        {
-            get { return _confirmEmail; }
-            set
-            {
-                _confirmEmail = value;
-                OnPropertyChanged(nameof(ConfirmEmail));
             }
         }
 
@@ -72,7 +61,7 @@ namespace Book_Hopper.ViewModels
             }
         }
 
-        public SecureString Password
+        public String Password
         {
             get { return _password; }
             set
@@ -82,7 +71,7 @@ namespace Book_Hopper.ViewModels
             }
         }
 
-        public SecureString ConfirmPassword
+        public String ConfirmPassword
         {
             get { return _confirmPassword; }
             set
@@ -105,7 +94,7 @@ namespace Book_Hopper.ViewModels
         public ICommand RegisterCommand { get; }
         public ICommand RedirectToLoginCommand { get; }
 
-        public RegisterViewModel()
+        public UserRegisterViewModel()
         {
             RegisterCommand = new ViewModelCommand_RelayCommand_(ExecuteRegisterCommand, CanExecuteRegisterCommand);
             RedirectToLoginCommand = new ViewModelCommand_RelayCommand_(ExecuteRedirectToLoginCommand, CanExecuteRedirectToLoginCommand);
@@ -118,7 +107,6 @@ namespace Book_Hopper.ViewModels
                 // Validation logic
                 if (string.IsNullOrWhiteSpace(Username) ||
                     string.IsNullOrWhiteSpace(Email) ||
-                    string.IsNullOrWhiteSpace(ConfirmEmail) ||
                     string.IsNullOrWhiteSpace(FirstName) ||
                     string.IsNullOrWhiteSpace(LastName) ||
                     Password == null ||
@@ -128,13 +116,8 @@ namespace Book_Hopper.ViewModels
                     return;
                 }
 
-                if (Email != ConfirmEmail)
-                {
-                    ErrorMessage = "Email and Confirm Email must match.";
-                    return;
-                }
-
-                if (!SecureStringHelper.AreSecureStringsEqual(Password, ConfirmPassword))
+               
+                if (Password != ConfirmPassword)
                 {
                     ErrorMessage = "Password and Confirm Password must match.";
                     return;
@@ -179,14 +162,12 @@ namespace Book_Hopper.ViewModels
 
         private bool CanExecuteRegisterCommand(object obj)
         {
-            return true; 
+            return true;
         }
-
-
         private void ExecuteRedirectToLoginCommand(object obj)
         {
             // Create an instance of LoginView
-            LoginView loginView = new LoginView();
+            UserLogin loginView = new UserLogin();
 
             // Show LoginView
             loginView.Show();
@@ -196,6 +177,8 @@ namespace Book_Hopper.ViewModels
                 window.Close();
             }
         }
+
+
         private bool CanExecuteRedirectToLoginCommand(object obj)
         {
             return true;

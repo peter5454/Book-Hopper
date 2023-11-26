@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Book_Hopper.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,12 @@ namespace BookHopperApp.View
     /// </summary>
     public partial class UserEditProfile : Window
     {
-        public UserEditProfile()
+        public UserEditProfile(UserModel user)
         {
             InitializeComponent();
+            var viewModel = new Book_Hopper.ViewModels.UserEditProfileViewModel(user);
+            DataContext = viewModel;
         }
+
     }
 }

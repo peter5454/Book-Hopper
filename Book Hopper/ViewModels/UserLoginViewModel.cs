@@ -10,18 +10,19 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Navigation;
 using Book_Hopper.Services;
-using Book_Hopper.View;
 using Book_Hopper.CustomControls;
+using Book_Hopper.Model;
+using Book_Hopper.Helpers;
+using BookHopperApp.View;
 
 namespace Book_Hopper.ViewModels
 {
-    public class LoginViewModel : ViewModelBase
+    class UserLoginViewModel : ViewModelBase
     {
-        //Fields
         private string _username;
-        private SecureString _password;
+        private string _password;
         private string _errorMessage;
-        private bool _isViewVisible = true;
+
 
         public string Username
         {
@@ -36,7 +37,8 @@ namespace Book_Hopper.ViewModels
             }
         }
 
-        public SecureString Password
+
+        public string Password
         {
             get
             {
@@ -48,6 +50,7 @@ namespace Book_Hopper.ViewModels
                 OnPropertyChanged(nameof(Password));
             }
         }
+
 
         public string ErrorMessage
         {
@@ -62,22 +65,9 @@ namespace Book_Hopper.ViewModels
             }
         }
 
-        public bool IsViewVisible
-        {
-            get
-            {
-                return _isViewVisible;
-            }
-            set
-            {
-                _isViewVisible = value;
-                OnPropertyChanged(nameof(IsViewVisible));
-            }
-        }
 
         public ICommand LoginCommand { get; }
-        public ICommand ShowPasswordCommand { get; }
-        public LoginViewModel()
+        public UserLoginViewModel()
         {
             LoginCommand = new ViewModelCommand_RelayCommand_(ExecuteLoginCommand, CanExecuteLoginCommand);
             RegisterCommand = new ViewModelCommand_RelayCommand_(ExecuteRegisterCommand, CanExecuteRegisterCommand);
@@ -107,16 +97,26 @@ namespace Book_Hopper.ViewModels
                 IsLoginInProgress = true;
                 ErrorMessage = string.Empty;
 
-                // Convert SecureString to plain string
-                string plainPassword = ConvertToUnsecureString(Password);
+                // Convert string password to SecureString
+                SecureString securePassword = SecureStringHelper.ConvertToSecureString(Password);
 
                 // Authenticate user
-                bool isAuthenticated = await Task.Run(() => AuthService.AuthenticateUser(Username, Password));
+                UserModel authenticatedUser = await Task.Run(() => AuthService.AuthenticateUser(Username, securePassword));
 
-                if (isAuthenticated)
+                if (authenticatedUser != null)
                 {
-                    // Successful login logic
-                    MessageBox.Show("Login successful!");
+                    if (Username == "admin")
+                    {
+                        AdminDashboard adminDashboard = new AdminDashboard();
+                        adminDashboard.Show();
+                    }
+                    else
+                    {
+                        UserBooks userBooks = new UserBooks(authenticatedUser);
+                        userBooks.Show();
+                    }
+
+                    FindWindow<Window>()?.Close();
                 }
                 else
                 {
@@ -133,9 +133,10 @@ namespace Book_Hopper.ViewModels
             }
         }
 
+
         private bool CanExecuteLoginCommand(object obj)
         {
-            return !IsLoginInProgress && !string.IsNullOrWhiteSpace(Username) && Username.Length >= 3 && Password != null && Password.Length >= 3;
+            return true;
         }
 
         private static string ConvertToUnsecureString(SecureString securePassword)
@@ -158,20 +159,27 @@ namespace Book_Hopper.ViewModels
         private void ExecuteRegisterCommand(object obj)
         {
             // Create an instance of RegisterView
-            RegisterView registerView = new RegisterView();
+            UserRegister userRegister = new UserRegister();
 
             // Show RegisterView
-            registerView.Show();
-            if (obj is Window window)
-            {
-                window.Close();
-            }
+            userRegister.Show();
+            FindWindow<Window>()?.Close();
         }
 
         private bool CanExecuteRegisterCommand(object obj)
         {
             return true;
         }
-
+        private static T FindWindow<T>() where T : Window
+        {
+            foreach (Window window in Application.Current.Windows)
+            {
+                if (window is T)
+                {
+                    return (T)window;
+                }
+            }
+            return null;
+        }
     }
 }

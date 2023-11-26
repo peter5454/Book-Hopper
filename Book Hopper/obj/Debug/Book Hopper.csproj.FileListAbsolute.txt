@@ -7,12 +7,10 @@ C:\Users\peter\source\repos\Book Hopper\Book Hopper\bin\Debug\EntityFramework.xm
 C:\Users\peter\source\repos\Book Hopper\Book Hopper\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\peter\source\repos\Book Hopper\Book Hopper\obj\Debug\Book Hopper.csproj.AssemblyReference.cache
 C:\Users\peter\source\repos\Book Hopper\Book Hopper\obj\Debug\MainWindow.g.cs
-C:\Users\peter\source\repos\Book Hopper\Book Hopper\obj\Debug\View\LoginView.g.cs
 C:\Users\peter\source\repos\Book Hopper\Book Hopper\obj\Debug\App.g.cs
 C:\Users\peter\source\repos\Book Hopper\Book Hopper\obj\Debug\Book Hopper_MarkupCompile.cache
 C:\Users\peter\source\repos\Book Hopper\Book Hopper\obj\Debug\Book Hopper_MarkupCompile.lref
 C:\Users\peter\source\repos\Book Hopper\Book Hopper\obj\Debug\MainWindow.baml
-C:\Users\peter\source\repos\Book Hopper\Book Hopper\obj\Debug\View\LoginView.baml
 C:\Users\peter\source\repos\Book Hopper\Book Hopper\obj\Debug\Book Hopper.g.resources
 C:\Users\peter\source\repos\Book Hopper\Book Hopper\obj\Debug\Book_Hopper.Properties.Resources.resources
 C:\Users\peter\source\repos\Book Hopper\Book Hopper\obj\Debug\Book Hopper.csproj.GenerateResource.cache
@@ -53,8 +51,6 @@ C:\Users\peter\source\repos\Book Hopper\Book Hopper\bin\Debug\System.Text.Json.x
 C:\Users\peter\source\repos\Book Hopper\Book Hopper\bin\Debug\System.Threading.Channels.xml
 C:\Users\peter\source\repos\Book Hopper\Book Hopper\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\peter\source\repos\Book Hopper\Book Hopper\bin\Debug\System.ValueTuple.xml
-C:\Users\peter\source\repos\Book Hopper\Book Hopper\obj\Debug\View\RegisterView.g.cs
-C:\Users\peter\source\repos\Book Hopper\Book Hopper\obj\Debug\View\RegisterView.baml
 C:\Users\peter\source\repos\Book Hopper\Book Hopper\obj\Debug\CustomControls\UserControl1.g.cs
 C:\Users\peter\source\repos\Book Hopper\Book Hopper\obj\Debug\CustomControls\UserControl1.baml
 J:\VS Files\Peter5454-BookHopper\Book Hopper\obj\Debug\Book Hopper.csproj.AssemblyReference.cache
@@ -134,3 +130,21 @@ J:\VS Files\Peter5454-BookHopper\Book Hopper\obj\Debug\Book_Hopper.Properties.Re
 J:\VS Files\Peter5454-BookHopper\Book Hopper\obj\Debug\Book Hopper.csproj.GenerateResource.cache
 J:\VS Files\Peter5454-BookHopper\Book Hopper\obj\Debug\Book Hopper.csproj.CoreCompileInputs.cache
 J:\VS Files\Peter5454-BookHopper\Book Hopper\obj\Debug\Book Hopper.csproj.CopyComplete
+C:\Users\peter\source\repos\Book Hopper\Book Hopper\obj\Debug\View\AdminAccounts.g.cs
+C:\Users\peter\source\repos\Book Hopper\Book Hopper\obj\Debug\View\AdminBooks.g.cs
+C:\Users\peter\source\repos\Book Hopper\Book Hopper\obj\Debug\View\AdminDashboard.g.cs
+C:\Users\peter\source\repos\Book Hopper\Book Hopper\obj\Debug\View\UserBooks.g.cs
+C:\Users\peter\source\repos\Book Hopper\Book Hopper\obj\Debug\View\UserCreated.g.cs
+C:\Users\peter\source\repos\Book Hopper\Book Hopper\obj\Debug\View\UserEditProfile.g.cs
+C:\Users\peter\source\repos\Book Hopper\Book Hopper\obj\Debug\View\UserProfile.g.cs
+C:\Users\peter\source\repos\Book Hopper\Book Hopper\obj\Debug\View\UserRegister.g.cs
+C:\Users\peter\source\repos\Book Hopper\Book Hopper\obj\Debug\View\UserLogin.g.cs
+C:\Users\peter\source\repos\Book Hopper\Book Hopper\obj\Debug\View\AdminAccounts.baml
+C:\Users\peter\source\repos\Book Hopper\Book Hopper\obj\Debug\View\AdminBooks.baml
+C:\Users\peter\source\repos\Book Hopper\Book Hopper\obj\Debug\View\AdminDashboard.baml
+C:\Users\peter\source\repos\Book Hopper\Book Hopper\obj\Debug\View\UserBooks.baml
+C:\Users\peter\source\repos\Book Hopper\Book Hopper\obj\Debug\View\UserCreated.baml
+C:\Users\peter\source\repos\Book Hopper\Book Hopper\obj\Debug\View\UserEditProfile.baml
+C:\Users\peter\source\repos\Book Hopper\Book Hopper\obj\Debug\View\UserLogin.baml
+C:\Users\peter\source\repos\Book Hopper\Book Hopper\obj\Debug\View\UserProfile.baml
+C:\Users\peter\source\repos\Book Hopper\Book Hopper\obj\Debug\View\UserRegister.baml

@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:BookHopperApp.View"
+        xmlns:local="clr-namespace:BookHopperApp.View" xmlns:customcontrols="clr-namespace:Book_Hopper.CustomControls"
         mc:Ignorable="d"
         Title="UserEditProfile" Height="1080" Width="1920"
         WindowState="Maximized"
@@ -74,12 +74,12 @@
                 <Image Source="/Images/Lilies.png"/>
             </Grid>
 
-            <StackPanel Width="1385" Orientation="Horizontal" Margin="0,135,0,0"  Background="#D5DDBC" VerticalAlignment="Top">
+            <StackPanel Width="1385" Orientation="Horizontal" Margin="268,135,267,0"  Background="#D5DDBC" VerticalAlignment="Top" Height="915">
                 <Border Width="50"></Border>
                 <StackPanel Orientation="Vertical" Width="369">
                     <Image Source="/Images/Profile.png" Width="369" Margin="0,50,0,0"/>
                     <TextBlock Text="Library ID Number" Foreground="#000000" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,30,0,0" />
-                    <TextBlock Height="62" Background="#E8E8E8" FontSize="12" Margin="10,0"/>
+                    <TextBlock Height="62" Background="#E8E8E8" FontSize="24" Margin="10,0" Text="{Binding User.Id}" TextAlignment="Center"/>
                 </StackPanel>
                 <StackPanel Orientation="Vertical" Width="900" Margin="16,0,50,0">
                     <Border Height="152"/>
@@ -91,18 +91,20 @@
 
                         <StackPanel Orientation="Vertical" Grid.Column="0">
                             <TextBlock Text="First Name" Foreground="#000000" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,30,0,0" />
-                            <TextBox Height="62" VerticalContentAlignment="Center" FontSize="12" Padding="20,0" Margin="20,0"/>
+                            <TextBox Height="62" VerticalContentAlignment="Center" FontSize="24" Padding="20,0" Margin="20,0" VerticalAlignment="Center"  Text="{Binding User.Fname, UpdateSourceTrigger=PropertyChanged}"/>
                         </StackPanel>
 
                         <StackPanel Orientation="Vertical" Grid.Column="1">
                             <TextBlock Text="Last Name" Foreground="#000000" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,30,0,0" />
-                            <TextBox Height="62" VerticalContentAlignment="Center" FontSize="12" Padding="20,0" Margin="20,0"/>
+                            <TextBox Height="62" VerticalContentAlignment="Center" FontSize="24" Padding="20,0" Margin="20,0" VerticalAlignment="Center" Text="{Binding User.LName, UpdateSourceTrigger=PropertyChanged}"/>
                         </StackPanel>
                     </Grid>
                     <TextBlock Text="Username" Foreground="#000000" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,30,0,0" />
-                    <TextBox Height="62" VerticalContentAlignment="Center" FontSize="12" Padding="20,0" Margin="20,0"/>
+                    <TextBox Height="62" VerticalContentAlignment="Center" FontSize="24" Padding="20,0" Margin="20,0" VerticalAlignment="Center" Text="{Binding User.Username, UpdateSourceTrigger=PropertyChanged}"/>
                     <TextBlock Text="Email" Foreground="#000000" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,30,0,0" />
-                    <TextBox Height="62" VerticalContentAlignment="Center" FontSize="12" Padding="20,0" Margin="20,0"/>
+                    <TextBox Height="62" VerticalContentAlignment="Center" FontSize="24" Padding="20,0" Margin="20,0" VerticalAlignment="Center" Text="{Binding User.Email, UpdateSourceTrigger=PropertyChanged}"/>
+                    <TextBlock Foreground="#000000" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,30,0,0" ><Run Text="Current"/><Run Text=" Password"/></TextBlock>
+                    <customcontrols:BindablePasswordBox x:Name="Password" Background="White" Height="62" VerticalContentAlignment="Center" FontSize="24" Padding="20,0" Margin="20,0" VerticalAlignment="Center" Password="{Binding CurrentPassword, Mode=TwoWay}"/>
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition/>
@@ -110,28 +112,29 @@
                         </Grid.ColumnDefinitions>
 
                         <StackPanel Orientation="Vertical" Grid.Column="0">
-                            <TextBlock Text="Password" Foreground="#000000" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,30,0,0" />
-                            <TextBox Height="62" VerticalContentAlignment="Center" FontSize="12" Padding="20,0" Margin="20,0"/>
+                            <TextBlock Text="New Password" Foreground="#000000" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,30,0,0" />
+                            <customcontrols:BindablePasswordBox x:Name="NewPassword" Background="White" Height="62" VerticalContentAlignment="Center" FontSize="24" Padding="20,0" Margin="20,0" VerticalAlignment="Center" Password="{Binding NewPassword, Mode=TwoWay}"/>
                         </StackPanel>
 
                         <StackPanel Orientation="Vertical" Grid.Column="1">
-                            <TextBlock Text="Confirm Password" Foreground="#000000" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,30,0,0" />
-                            <TextBox Height="62" VerticalContentAlignment="Center" FontSize="12" Padding="20,0" Margin="20,0"/>
+                            <TextBlock Text="Confirm New Password" Foreground="#000000" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,30,0,0" />
+                            <customcontrols:BindablePasswordBox x:Name="ConfirmNewPassword" Background="White" Height="62" VerticalContentAlignment="Center" FontSize="24" Padding="20,0" Margin="20,0" VerticalAlignment="Center" Password="{Binding ConfirmNewPassword, Mode=TwoWay}"/>
                         </StackPanel>
                     </Grid>
+                    <TextBlock Text="{Binding ErrorMessage}" Foreground="Red" Margin="0,0,0,0" FontSize="24" FontWeight="Bold" />
+                    <TextBlock Text="{Binding ErrorMessageTwo}" Foreground="Red" Margin="0,0,0,0" FontSize="24" FontWeight="Bold" />
                     <Grid HorizontalAlignment="Right">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition/>
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
-
                         <StackPanel Orientation="Vertical" Grid.Column="0">
-                            <Button x:Name="ApplyChanges" Width="222" Height="62" Margin="5,20,5,50" Background="#8A9B68">
-                                <TextBlock Foreground="#D5DDBC" FontSize="24" FontWeight="Bold">Apply Changes</TextBlock>
+                            <Button x:Name="ApplyChanges" Width="222" Height="62" Margin="5,0,5,0" Background="#8A9B68" Command="{Binding ConfirmChangesCommand}">
+                                <TextBlock Foreground="#D5DDBC" FontSize="24" FontWeight="Bold"><Run Text="Apply Changes"/></TextBlock>
                             </Button>
                         </StackPanel>
                         <StackPanel Orientation="Vertical" Grid.Column="1">
-                            <Button x:Name="Login" Width="222" Height="62" Margin="5,20,5,50" Background="#937B63">
+                            <Button x:Name="Login" Width="222" Height="62" Margin="5,0,5,40" Background="#937B63" Command="{Binding CancelCommand}">
                                 <TextBlock Foreground="#D5DDBC" FontSize="24" FontWeight="Bold">Cancel</TextBlock>
                             </Button>
                         </StackPanel>

@@ -30,5 +30,35 @@ namespace Book_Hopper.Helpers
                     Marshal.ZeroFreeBSTR(bstr2);
             }
         }
+        public static SecureString ConvertToSecureString(string plainText)
+        {
+            if (plainText == null)
+                throw new ArgumentNullException(nameof(plainText));
+
+            var secureString = new SecureString();
+
+            foreach (char c in plainText)
+            {
+                secureString.AppendChar(c);
+            }
+
+            return secureString;
+        }
+        public static string ConvertToUnsecureString(SecureString securePassword)
+        {
+            IntPtr unmanagedString = IntPtr.Zero;
+
+            try
+            {
+                unmanagedString = Marshal.SecureStringToGlobalAllocUnicode(securePassword);
+                return Marshal.PtrToStringUni(unmanagedString);
+            }
+            finally
+            {
+                Marshal.ZeroFreeGlobalAllocUnicode(unmanagedString);
+            }
+        }
+
     }
+
 }

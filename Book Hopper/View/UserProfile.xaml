@@ -4,13 +4,16 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BookHopperApp.View"
+        xmlns:ViewModel="clr-namespace:Book_Hopper.ViewModels"
         mc:Ignorable="d"
         Title="UserProfile" Height="1080" Width="1920"
         WindowState="Maximized"
         WindowStyle="None"
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen">
-
+    <Window.DataContext>
+        <ViewModel:UserProfileViewModel/>
+    </Window.DataContext>
     <Border Background="#4AC7EF">
 
         <Grid>
@@ -79,7 +82,7 @@
                 <StackPanel Orientation="Vertical" Width="369">
                     <Image Source="/Images/Profile.png" Width="369" Margin="0,50,0,0"/>
                     <TextBlock Text="Library ID Number" Foreground="#000000" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,30,0,0" />
-                    <TextBlock Height="62" Background="#E8E8E8" FontSize="12" Margin="10,0"/>
+                    <TextBlock Height="62" Background="#E8E8E8" FontSize="24" Margin="10,0" Text="{Binding User.Id}" TextAlignment="Center" VerticalAlignment="Center"/>
                 </StackPanel>
                 <StackPanel Orientation="Vertical" Width="900" Margin="16,0,50,0">
                     <Border Height="152"/>
@@ -91,18 +94,18 @@
 
                         <StackPanel Orientation="Vertical" Grid.Column="0">
                             <TextBlock Text="First Name" Foreground="#000000" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,30,0,0" />
-                            <TextBlock Height="62" Background="#E8E8E8" FontSize="12" Margin="10,0"/>
+                            <TextBlock TextAlignment="Center" Height="62" Background="#E8E8E8" FontSize="24" Margin="10,0" Text="{Binding User.Fname}" VerticalAlignment="Center"/>
                         </StackPanel>
 
                         <StackPanel Orientation="Vertical" Grid.Column="1">
                             <TextBlock Text="Last Name" Foreground="#000000" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,30,0,0" />
-                            <TextBlock Height="62" Background="#E8E8E8" FontSize="12" Margin="10,0"/>
+                            <TextBlock Height="62" Background="#E8E8E8" FontSize="24" Margin="10,0" TextAlignment="Center" Text="{Binding User.LName}" VerticalAlignment="Center"/>
                         </StackPanel>
                     </Grid>
                     <TextBlock Text="Username" Foreground="#000000" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,30,0,0" />
-                    <TextBlock Height="62" Background="#E8E8E8" FontSize="12" Margin="10,0"/>
+                    <TextBlock Height="62" Background="#E8E8E8" FontSize="24" Margin="10,0" TextAlignment="Center" Text="{Binding User.Username}" VerticalAlignment="Center"/>
                     <TextBlock Text="Email" Foreground="#000000" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,30,0,0" />
-                    <TextBlock Height="62" Background="#E8E8E8" FontSize="12" Margin="10,0"/>
+                    <TextBlock Height="62" Background="#E8E8E8" FontSize="24" Margin="10,0" TextAlignment="Center" Text="{Binding User.Email}" VerticalAlignment="Center"/>
                     <Grid HorizontalAlignment="Right">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition/>
@@ -110,13 +113,13 @@
                         </Grid.ColumnDefinitions>
 
                         <StackPanel Orientation="Vertical" Grid.Column="0">
-                            <Button x:Name="EditInfo" Width="222" Height="62" Margin="5,20,5,50" Background="#937B63">
+                            <Button x:Name="EditInfo" Width="222" Height="62" Margin="5,20,5,50" Background="#937B63" Command="{Binding ChangeInfoCommand}">
                                 <TextBlock Foreground="#D5DDBC" FontSize="24" FontWeight="Bold">Edit Info</TextBlock>
                             </Button>
                         </StackPanel>
                         <StackPanel Orientation="Vertical" Grid.Column="1">
-                            <Button x:Name="Login" Width="222" Height="62" Margin="5,20,5,50" Background="#934D40">
-                                <TextBlock Foreground="#D5DDBC" FontSize="24" FontWeight="Bold">Login</TextBlock>
+                            <Button x:Name="Logout" Width="222" Height="62" Margin="5,20,5,50" Background="#934D40" Command="{Binding LogoutCommand}">
+                                <TextBlock Foreground="#D5DDBC" FontSize="24" FontWeight="Bold">Logout</TextBlock>
                             </Button>
                         </StackPanel>
                     </Grid>

@@ -121,8 +121,12 @@
     <Compile Include="Model\IUserRepository.cs" />
     <Compile Include="Model\UserModel.cs" />
     <Compile Include="Services\AuthService.cs" />
-    <Compile Include="ViewModels\LoginViewModel.cs" />
-    <Compile Include="ViewModels\RegisterViewModel.cs" />
+    <Compile Include="ViewModels\UserBooksViewModel.cs" />
+    <Compile Include="ViewModels\UserCreatedViewModel.cs" />
+    <Compile Include="ViewModels\UserEditProfileViewModel.cs" />
+    <Compile Include="ViewModels\UserLoginViewModel.cs" />
+    <Compile Include="ViewModels\UserProfileViewModel.cs" />
+    <Compile Include="ViewModels\UserRegisterViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
     <Compile Include="ViewModels\ViewModelCommand%28RelayCommand%29.cs" />
     <Compile Include="View\AdminAccounts.xaml.cs">
@@ -133,12 +137,6 @@
     </Compile>
     <Compile Include="View\AdminDashboard.xaml.cs">
       <DependentUpon>AdminDashboard.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\LoginView.xaml.cs">
-      <DependentUpon>LoginView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\RegisterView.xaml.cs">
-      <DependentUpon>RegisterView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\UserBooks.xaml.cs">
       <DependentUpon>UserBooks.xaml</DependentUpon>
@@ -185,14 +183,6 @@
     <Page Include="View\AdminDashboard.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\LoginView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\RegisterView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\UserBooks.xaml">
       <Generator>MSBuild:Compile</Generator>

@@ -4,6 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BookHopperApp.View"
+        xmlns:ViewModel="clr-namespace:Book_Hopper.ViewModels"
+        xmlns:customcontrols="clr-namespace:Book_Hopper.CustomControls"
         mc:Ignorable="d"
         Title="UserRegister" Height="1080" Width="1920"
         WindowState="Maximized"
@@ -11,6 +13,10 @@
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen">
 
+    <Window.DataContext>
+        <ViewModel:UserRegisterViewModel/>
+    </Window.DataContext>
+    
     <Border Background="#4AC7EF">
 
         <Grid>
@@ -38,35 +44,6 @@
                        Grid.Column="0"
                        HorizontalAlignment="Left"
                        Margin="27,0,0,0"/>
-                    <TextBox Grid.Column="1" Width="1053" Height="53" VerticalAlignment="Center" FontSize="24">
-                        <TextBox.Resources>
-                            <Style TargetType="{x:Type Border}">
-                                <Setter Property="CornerRadius" Value="30"/>
-                            </Style>
-                        </TextBox.Resources>
-                    </TextBox>
-                    <Image Source="/Images/Search Icon.png" Grid.Column="1" Margin="999,0,0,0" Width="34"/>
-
-                    <Button Name="Books"
-                        Background="#FFFFFF"
-                        Height="75"
-                        Grid.Column="3">
-                        <TextBlock FontWeight="Bold" FontSize="18">BOOKS</TextBlock>
-                    </Button>
-
-                    <Button Name="Account"
-                        Background="#FFFFFF"
-                        Height="75"
-                        Grid.Column="5">
-                        <TextBlock FontWeight="Bold" FontSize="18">ACCOUNT</TextBlock>
-                    </Button>
-
-                    <Button Name="Settings"
-                        Background="#FFFFFF"
-                        Height="75"
-                        Grid.Column="7">
-                        <TextBlock FontWeight="Bold" FontSize="18">SETTINGS</TextBlock>
-                    </Button>
 
                 </Grid>
             </Grid>
@@ -74,7 +51,7 @@
                 <Image Source="/Images/Lilies.png"/>
             </Grid>
 
-            <StackPanel Width="639" Orientation="Vertical" Margin="640,136,640,271" Background="#B6C197">
+            <StackPanel Width="639" Orientation="Vertical" Margin="640,136,640,221" Background="#B6C197">
                 <Image Source="/Images/LOGOwithname.png" Margin="0,20" Width="360"/>
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -88,7 +65,7 @@
                            FontWeight="Bold"
                            HorizontalAlignment="Center"
                            />
-                        <TextBox Width="280" Height="62" VerticalContentAlignment="Center" FontSize="12" Padding="20,0,0,0"/>
+                        <TextBox Width="280" Height="62" VerticalContentAlignment="Center" FontSize="18" Padding="20,0,0,0" Text="{Binding FirstName, UpdateSourceTrigger=PropertyChanged}"/>
                     </StackPanel>
                     <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Grid.Column="1">
                         <TextBlock Text="Last Name"
@@ -97,14 +74,14 @@
                            FontWeight="Bold"
                            HorizontalAlignment="Center"
                            />
-                        <TextBox Width="280" Height="62" VerticalContentAlignment="Center" FontSize="12" Padding="20,0,0,0"/>
+                        <TextBox Width="280" Height="62" VerticalContentAlignment="Center" FontSize="18" Padding="20,0,0,0" Text="{Binding LastName, UpdateSourceTrigger=PropertyChanged}"/>
                     </StackPanel>
                 </Grid>
                 <TextBlock Text="Username" Foreground="#000000" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,30,0,0" />
-                <TextBox Width="468" Height="62" VerticalContentAlignment="Center" FontSize="12" Padding="20,0,0,0"/>
+                <TextBox Width="468" Height="62" VerticalContentAlignment="Center" FontSize="18" Padding="20,0,0,0" Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}"/>
 
                 <TextBlock Text="Email" Foreground="#000000" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,30,0,0" />
-                <TextBox Width="468" Height="62" VerticalContentAlignment="Center" FontSize="12" Padding="20,0,0,0"/>
+                <TextBox Width="468" Height="62" VerticalContentAlignment="Center" FontSize="18" Padding="20,0,0,0" Text="{Binding Email, UpdateSourceTrigger=PropertyChanged}"/>
 
                 <Grid Margin="0,20">
                     <Grid.ColumnDefinitions>
@@ -118,7 +95,7 @@
                            FontWeight="Bold"
                            HorizontalAlignment="Center"
                            />
-                        <TextBox Width="280" Height="62" VerticalContentAlignment="Center" FontSize="12" Padding="20,0,0,0"/>
+                        <customcontrols:BindablePasswordBox Width="280" Height="62" VerticalContentAlignment="Center" FontSize="18" Padding="20,0,0,0" Background="White" Password="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                     </StackPanel>
                     <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Grid.Column="1">
                         <TextBlock Text="Confirm Password"
@@ -127,12 +104,15 @@
                            FontWeight="Bold"
                            HorizontalAlignment="Center"
                            />
-                        <TextBox Width="280" Height="62" VerticalContentAlignment="Center" FontSize="12" Padding="20,0,0,0"/>
+                        <customcontrols:BindablePasswordBox Width="280" Height="62" VerticalContentAlignment="Center" FontSize="18" Padding="20,0,0,0" Background="white" Password="{Binding ConfirmPassword, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                     </StackPanel>
                 </Grid>
-
-                <Button x:Name="Login" Width="222" Height="62" Background="#934D40">
+                <TextBlock Text="{Binding ErrorMessage}" Foreground="#931F1D" VerticalAlignment="Center" FontSize="12" FontFamily="PT Sans Narrow"  Margin="0,0,0,0" TextWrapping="Wrap" Height="30"/>
+                <Button x:Name="Register" Width="222" Height="62" Background="#934D40" Command="{Binding RegisterCommand}">
                     <TextBlock Foreground="#D5DDBC" FontSize="24" FontWeight="Bold">Create Account</TextBlock>
+                </Button>
+                <Button x:Name="Login" Width="222" Height="22" Background="#8A9B68" Foreground="#D5DDBC" FontSize="12" FontWeight="Bold" Margin="208,10,209,0" Command="{Binding RedirectToLoginCommand}"  CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}">
+                    <TextBlock Foreground="#D5DDBC" FontSize="12" FontWeight="Bold">Go back to login</TextBlock>
                 </Button>
             </StackPanel>
 
