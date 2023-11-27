@@ -25,14 +25,22 @@ namespace Book_Hopper.ViewModels
             // Show LoginView
             loginView.Show();
 
-            if (obj is Window window)
-            {
-                window.Close();
-            }
+            FindWindow<Window>()?.Close();
         }
         private bool CanExecuteRedirectToLoginCommand(object obj)
         {
             return true;
+        }
+        private static T FindWindow<T>() where T : Window
+        {
+            foreach (Window window in Application.Current.Windows)
+            {
+                if (window is T)
+                {
+                    return (T)window;
+                }
+            }
+            return null;
         }
     }
 }
